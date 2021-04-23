@@ -10,7 +10,7 @@ RUN apt-get install -y wget gnupg
 # https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/sdk-current
 RUN wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb
-
+RUN rm packages-microsoft-prod.deb
    
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | tee /etc/apt/sources.list.d/mono-official-stable.list
@@ -51,6 +51,9 @@ RUN cd /
 RUN wget -O xamarinAndroid.zip https://artprodcus3.artifacts.visualstudio.com/Ad0adf05a-e7d7-4b65-96fe-3f3884d42038/6fd3d886-57a5-4e31-8db7-52a1b47c07a8/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL3hhbWFyaW4vcHJvamVjdElkLzZmZDNkODg2LTU3YTUtNGUzMS04ZGI3LTUyYTFiNDdjMDdhOC9idWlsZElkLzM4OTI2L2FydGlmYWN0TmFtZS9pbnN0YWxsZXJzLXVuc2lnbmVkKy0rTGludXg1/content?format=zip
 RUN unzip -q xamarinAndroid.zip -d xamarinAndroid
 RUN dpkg -i 'xamarinAndroid/installers-unsigned - Linux/xamarin.android-oss_11.2.99.0_amd64.deb'
+
+RUN rm -r xamarinAndroid/
+RUN rm xamarinAndroid.zip
 
 
 RUN apt-get update \

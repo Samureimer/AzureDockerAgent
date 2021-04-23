@@ -1,0 +1,29 @@
+trigger:
+  branches:
+    include:
+    - master
+variables:
+- name: projectfile
+  value: '**/*Android.csproj'
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      name: default
+    steps:
+    - task: 6d15af64-176c-496d-b583-fd2ae21d4df4@1
+      inputs:
+        repository: self
+        submodules: true
+    - task: MSBuild@1
+      displayName: 'Restore Packages'
+      inputs:
+        solution: '**/*.sln'
+        msbuildArguments: '/t:Restore'
+    - task: XamarinAndroid@1
+      displayName: 'Build android app'
+      inputs:
+        projectFile: $(projectfile)
+        msbuildArguments: '/p:AndroidSdkDirectory=/android/sdk/'
+

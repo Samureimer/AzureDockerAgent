@@ -1,0 +1,24 @@
+trigger:
+  branches:
+    include:
+    - master
+variables:
+- name: solution
+  value: '**/*.sln'
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      name: default
+    steps:
+    - task: 6d15af64-176c-496d-b583-fd2ae21d4df4@1
+      inputs:
+        repository: self
+        submodules: true
+    - task: DotNetCoreCLI@2
+      displayName: 'Build web project'
+      inputs:
+        command: 'build'
+        projects: $(solution)
+

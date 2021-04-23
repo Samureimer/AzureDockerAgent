@@ -1,5 +1,5 @@
 # AzureDockerAgent
-A docker containerized agent for Android, NetCore ASP and Angular builds
+A docker containerized agent for Android, ASP.Net Core and Angular builds
 
 I needed a container to pose as a self hosted Azure DevOps pipeline agent.
 I needed to build the following for my project:

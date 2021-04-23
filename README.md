@@ -14,6 +14,7 @@ I had to manually add the **Xamarin.Android** capability to my agent in Azure De
 
 
 I got a lot in inspiration and help from the following articles and posts:
+
 https://askubuntu.com/questions/1177970/how-to-develop-for-android-with-xamarin
 https://linuxize.com/post/how-to-install-mono-on-ubuntu-20-04/
 https://github.com/nathansamson/xamarin-android-docker/blob/master/Dockerfile

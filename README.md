@@ -16,12 +16,19 @@ I had to manually add the **Xamarin.Android** capability to my agent in Azure De
 I got a lot in inspiration and help from the following articles and posts:
 
 https://askubuntu.com/questions/1177970/how-to-develop-for-android-with-xamarin
+
 https://linuxize.com/post/how-to-install-mono-on-ubuntu-20-04/
+
 https://github.com/nathansamson/xamarin-android-docker/blob/master/Dockerfile
+
 https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/xamarin-android?view=azure-devops
+
 https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu
+
 https://github.com/vfabing/azure-pipelines-agent-docker-dotnet-core-sdk/blob/master/Dockerfile
+
 https://wakeupandcode.com/yaml-defined-ci-cd-for-asp-net-core-3-1/
+
 
 Build the docker agent with: **docker build -t dockeragent:latest .**
 Run the agent with: **docker run --name CONTAINER_NAME -e AZP_URL=https://dev.azure.com/YOUR_ORGANIZATION/ -e AZP_TOKEN=YOUR_PAT_TOKEN -e AZP_AGENT_NAME=AGENT_NAME dockeragent:latest**

@@ -26,11 +26,11 @@ https://wakeupandcode.com/yaml-defined-ci-cd-for-asp-net-core-3-1/
 Build the docker agent with: **docker build -t dockeragent:latest .**
 Run the agent with: **docker run --name CONTAINER_NAME -e AZP_URL=https://dev.azure.com/YOUR_ORGANIZATION/ -e AZP_TOKEN=YOUR_PAT_TOKEN -e AZP_AGENT_NAME=AGENT_NAME dockeragent:latest**
 
-PAT Access levels:
+**PAT Access levels:**
 https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page
 _For example, to create a token to enable a build and release agent to authenticate to Azure DevOps Services, limit your token's scope to Agent Pools (Read & manage). To read audit log events, and manage and delete streams, select Read Audit Log, and then select Create._
 
-
+**Submodules**
 My projects contain submodules that I have in a repository in the same DevOps project.
 To allow the agent to pull these submodules when building I had to **turn off** these settings on **BOTH** the **organization** settings **AND** the **project** settings:
 ![image](https://user-images.githubusercontent.com/5878260/115855282-5dd94080-a42b-11eb-88f7-9147a46d4952.png)
